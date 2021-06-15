@@ -17,4 +17,5 @@
     <type name="Magento\Customer\Model\Data\Customer">
         <plugin name="aht_plugin_customer" type="AHT\Sales\Plugin\Customer\PluginCustomer" sortOrder="1" disabled="false"/>
     </type>
+    
 </config>

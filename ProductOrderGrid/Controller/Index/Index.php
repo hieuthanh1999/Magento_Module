@@ -1,9 +1,10 @@
 <?php
-namespace AHT\FrontendTest\Controller\Index;
+
+namespace AHT\ProductOrderGrid\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
 {
-    /**
+   /**
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $_pageFactory;
@@ -26,8 +27,6 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-        echo "hji";
-        die;
-       // return $this->_pageFactory->create();
+        return $this->_pageFactory->create();
     }
 }
