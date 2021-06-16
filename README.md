@@ -20,9 +20,9 @@
 <p>----------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
 <h1>Custom CheckOut</h1>
-<p>Yêu cầu: </p>
-<p>Sử dụng: </p>
-<p>Hướng làm:</p>
+<p>Yêu cầu: Tạo Step thêm các flieds delivery_comment , delivery_date, trong admin có thể sửa được</p>
+<p>Sử dụng: Ajax Knockout JS</p>
+<p>Hướng làm: thêm 2 flieds vào các bảng sales_order, quote, tạo template/.html Step Delivery Date (ở đây mình dùng html - có thể dùng xml để tạo) sử dụng KnockoutJS để gọi file template/.html. Trong file js sử dụng storage.post() để gửi dữ liệu sang controller  tại đây sử dụng checkoutSession để lưu 2 giá trị, bắt event cho "order plane" để lưu vào sales_order.  </p>
 <p>Link tham khảo: </p>
 
 <p>----------------------------------------------------------------------------------------------------------------------------------------------------</p>
