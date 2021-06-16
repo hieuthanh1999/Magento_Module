@@ -15,3 +15,30 @@
 <p>Sử dụng: Jquery</p>
 <p>Hướng làm: Tạo file UpdateSchema lưu các attribute, Model/source để tạo select cho company type, gọi customer_account_create.xml để update block vào create account , sử dụng jquery để ẩn và hiện flieds Organization Name</p>
 <p>Link tham khảo: https://www.mageplaza.com/magento-2-module-development/magento-2-add-customer-attribute-programmatically.html</p>
+
+
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+<h1>Custom CheckOut</h1>
+<p>Yêu cầu: </p>
+<p>Sử dụng: </p>
+<p>Hướng làm:</p>
+<p>Link tham khảo: </p>
+
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+<h1>Sale Agent</h1>
+<p>Yêu cầu: </p>
+<p>Sử dụng: </p>
+<p>Hướng làm:</p>
+<p>Link tham khảo: </p>
+
+
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+<h1>No Module</h1>
+<p>Yêu cầu: </p>
+<p>Sử dụng: </p>
+<p>Hướng làm:</p>
+<p>Link tham khảo: </p>
+
