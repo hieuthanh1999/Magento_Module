@@ -1,19 +1,23 @@
 define(
     [
+        'jquery',
         'ko',
         'uiComponent',
         'underscore',
         'Magento_Checkout/js/model/step-navigator',
         'Magento_Customer/js/model/customer',
-         'mage/url',
-        'mage/storage',
+        'Magento_Checkout/js/model/quote',
+        'mage/url',
+        'mage/storage'
     ],
     function (
+        $,
         ko,
         Component,
         _,
         stepNavigator,
         customer,
+        quote,
         urlBuilder,
         storage
     ) {
@@ -21,19 +25,18 @@ define(
         /**
         * check-login - is the name of the component's .html template
         */
-       
         return Component.extend({
             defaults: {
-                template: 'AHT_CheckOut/check_delivery_date'
+                template: 'AHT_CustomCheckOut/check_delivery_date'
             },
 
             //add here your logic to display step,
             isVisible: ko.observable(true),
             isLogedIn: customer.isLoggedIn(),
             //step code will be used as step content id in the component template
-            stepCode: 'isDeliveryDateCheck',
+            stepCode: 'delivery',
             //step title value
-            stepTitle: 'Delivery Step',
+            stepTitle: 'Delivery step',
 
             /**
             *
@@ -73,32 +76,34 @@ define(
 
             },
 
-            
             /**
             * @returns void
             */
             navigateToNextStep: function () {
-                stepNavigator.next();
-             
-                var serviceUrl = urlBuilder.build('test/index/index');
-               
-                var date    =  document.getElementById('checkout-date').value;
-                var comment =  document.getElementById('checkout-comment').value;
-
+                var date = document.getElementById('checkout-date').value;
+                var comment = document.getElementById('checkout-comment').value;
+                console.log(comment);
+                console.log(date);
+                
+                var quoteId = quote.getQuoteId();
+                // var isCustomer = customer.isLoggedIn();
+                var url = urlBuilder.build('customcheck/index/index');
+                // var url = urlBuilder.build('delivery/index/savesession');
                 storage.post(
-                    serviceUrl,
-                    JSON.stringify( {'checkout-date': date,'checkout-comment': comment}
-                                    ),
+                    url,
+                    JSON.stringify({ quoteId:quoteId, date: date, comment: comment }),
+                    // JSON.stringify({date: date, comment: comment }),
                     false
-                ).done(function (response) {
-                           /** Do your code here */
-                           console.log(response);
+                ).done(
+                    function (respone) {
+                        // alert(respone);
+                        console.log(respone);
+                        stepNavigator.next();
                     }
-                ).fail(function (response) {
-                    // code khi fail
-                });
-
-
+    
+                ).fail(
+                );
+                
             }
         });
     }

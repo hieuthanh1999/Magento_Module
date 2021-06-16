@@ -1,5 +1,5 @@
 <?php
-namespace AHT\FrontendTest\Controller\Index;
+namespace AHT\CheckOut\Controller\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
 {

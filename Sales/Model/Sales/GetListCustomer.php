@@ -27,13 +27,8 @@ class GetListCustomer extends \Magento\Eav\Model\Entity\Attribute\Source\Abstrac
     public function getAllOptions()
     {
         if ($this->_options === null) {
-
-            $query = $this->connection->fetchAll("SELECT c.firstname, c.entity_id FROM customer_entity as c 
-        LEFT JOIN customer_entity_int  as i ON i.entity_id = c.entity_id 
-        RIGHT JOIN eav_attribute as e ON i.attribute_id = e.attribute_id 
-        WHERE attribute_code = 'is_sales_agent'");
-
-            foreach ($query as $key => $item) {
+        $collection = $this->_customerFactory->create()->getCollection()->addFieldToFilter('is_sales_agent', 1);
+            foreach ($collection as $key => $item) {
                 $this->_options[] = [
                     'label' => $item['firstname'],
                     'value' => $item['entity_id'],

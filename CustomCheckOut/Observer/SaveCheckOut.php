@@ -1,6 +1,6 @@
 <?php
  
-namespace AHT\CheckOut\Observer;
+namespace AHT\CustomCheckOut\Observer;
  
 use Magento\Framework\Event\Observer;
  

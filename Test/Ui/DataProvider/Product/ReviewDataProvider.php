@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace AHT\ProductOrderGrid\Ui\DataProvider\Product;
+namespace AHT\Test\Ui\DataProvider\Product;
 
 use Magento\Framework\App\RequestInterface;
 use Magento\Ui\DataProvider\AbstractDataProvider;
@@ -19,7 +19,7 @@ use Magento\Review\Model\Review;
  * @method Collection getCollection
  * @since 100.1.0
  */
-class CustomDataProvider extends AbstractDataProvider
+class ReviewDataProvider extends AbstractDataProvider
 {
     /**
      * @var CollectionFactory
@@ -86,10 +86,18 @@ class CustomDataProvider extends AbstractDataProvider
     {
         $field = $filter->getField();
 
-        if (in_array($field, ['entity_id', 'store_id', 'created_at', 'billing_name', 'shipping_name', 'base_grand_total', 'grand_total', 'status'])) {
+        if (in_array($field, ['review_id', 'created_at', 'status_id'])) {
             $filter->setField('rt.' . $field);
-            }
-            
+        }
+
+        if (in_array($field, ['title', 'nickname', 'detail'])) {
+            $filter->setField('rdt.' . $field);
+        }
+
+        if ($field === 'review_created_at') {
+            $filter->setField('rt.created_at');
+        }
+
         parent::addFilter($filter);
     }
 }

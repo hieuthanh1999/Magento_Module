@@ -30,7 +30,7 @@
                                 "components": {
                                     "authentication-popup": {
                                         "component": "AHT_FrontendTest/js/authentication-popup",
-                                        "template" : "AHT_FrontendTest/authentication-popup"
+                                        "template" : "AHT_FrontendTest/authentication-popup",
                                     }
                                 }
                             }
@@ -65,15 +65,13 @@
             type: 'popup',
             responsive: true,
             title: 'Login Modal',
-            buttons: [
-            //     {
-            //     text: $.mage.__('Close'),
-            //     class: '',
-            //     click: function() {
-            //         this.closeModal();
-            //     }
-            // }
-        ]
+            buttons: [{
+                text: $.mage.__('Close'),
+                class: '',
+                click: function() {
+                    this.closeModal();
+                }
+            }]
         }, $('#modal2'));
 
         $("#button1").click(function() {

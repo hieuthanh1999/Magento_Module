@@ -1,7 +1,7 @@
 <?php
-namespace AHT\FrontendTest\Controller\Index;
+namespace AHT\CheckOut\Controller\Index;
 
-class Index extends \Magento\Framework\App\Action\Action
+class save extends \Magento\Framework\App\Action\Action
 {
     /**
      * @var \Magento\Framework\View\Result\PageFactory
@@ -26,6 +26,8 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-        return $this->_pageFactory->create();
+        echo ":hih";
+        die;
+        //return $this->_pageFactory->create();
     }
 }

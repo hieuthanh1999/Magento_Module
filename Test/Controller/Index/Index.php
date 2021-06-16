@@ -1,9 +1,10 @@
 <?php
-namespace AHT\FrontendTest\Controller\Index;
+
+namespace AHT\Test\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
 {
-    /**
+   /**
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $_pageFactory;

@@ -16,17 +16,12 @@
     'mage/validation'
 ], function ($, ko, Component, loginAction, customerData, authenticationPopup, $t, url, alert) {
     'use strict';
-
     return Component.extend({
         registerUrl: window.authenticationPopup.customerRegisterUrl,
         forgotPasswordUrl: window.authenticationPopup.customerForgotPasswordUrl,
         autocomplete: window.authenticationPopup.autocomplete,
         modalWindow: null,
         isLoading: ko.observable(false),
-
-        defaults: {
-            template: 'Magento_Customer/authentication-popup'
-        },
 
         /**
          * Init
@@ -48,23 +43,6 @@
             }
         },
 
-        /** Is login form enabled for current customer */
-        isActive: function () {
-            var customer = customerData.get('customer');
-
-            return customer() == false; //eslint-disable-line eqeqeq
-        },
-
-        /** Show login popup window */
-        showModal: function () {
-            if (this.modalWindow) {
-                $(this.modalWindow).modal('openModal');
-            } else {
-                alert({
-                    content: $t('Guest checkout is disabled.')
-                });
-            }
-        },
 
         /**
          * Provide login action
@@ -75,17 +53,19 @@
             var loginData = {},
                 formElement = $(event.currentTarget),
                 formDataArray = formElement.serializeArray();
-
             event.stopPropagation();
             formDataArray.forEach(function (entry) {
                 loginData[entry.name] = entry.value;
             });
-
             if (formElement.validation() &&
                 formElement.validation('isValid')
             ) {
                 this.isLoading(true);
-                loginAction(loginData);
+                loginAction.registerLoginCallback(function (data) {
+                    console.log(data);
+                })
+                loginAction(loginData)
+
             }
 
             return false;
