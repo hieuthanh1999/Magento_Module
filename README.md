@@ -11,7 +11,7 @@
 <p>----------------------------------------------------------------------------------------------------------------------------------------------------</p>
 
 <h1>Customer Attribute</h1>
-<p>Yêu cầu: Tạo 3 flieds là attribute của Customer gồm flieds phone number, flieds company type và flieds Organization Name. Nếu company type == orther thì Organization Name sẽ hiện ra ngược lại thì hide()</p>
+<p>Yêu cầu: Tạo 3 flieds là attribute của Customer gồm flieds phone number, flieds company type và flieds Organization Name. Nếu company type == orther thì Organization Name sẽ show() ra ngược lại thì hide()</p>
 <p>Sử dụng: Jquery</p>
 <p>Hướng làm: Tạo file UpdateSchema lưu các attribute, Model/source để tạo select cho company type, gọi customer_account_create.xml để update block vào create account , sử dụng jquery để ẩn và hiện flieds Organization Name</p>
 <p>Link tham khảo: https://www.mageplaza.com/magento-2-module-development/magento-2-add-customer-attribute-programmatically.html</p>
